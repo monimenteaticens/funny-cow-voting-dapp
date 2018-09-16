@@ -5,7 +5,8 @@
             :lead="aboutLead"
         />
         <div class="c-text">
-            <a href="" target="_blank" rel="nofollow">GitHub repository</a>
+            <a href="https://github.com/monimenteaticens/funny-cow-voting-dapp" target="_blank" rel="nofollow">GitHub repository Vue application</a><br>
+            <a href="https://github.com/monimenteaticens/funny-cow-voting-contract" target="_blank" rel="nofollow">GitHub repository Smart Contract</a>
         </div>
     </div>
 </template>
