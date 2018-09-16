@@ -24,5 +24,4 @@ export default {
     color: $color-theme-white;
     min-height: 50px;
 }
-
 </style>

@@ -90,5 +90,4 @@ export default {
         @include font(primary, bold, normal, fs-80);
     }
 }
-
 </style>

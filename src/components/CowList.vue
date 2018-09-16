@@ -40,14 +40,13 @@ export default {
             this.$store.dispatch('getCowImages');
         },
     },
-
 };
 </script>
 
 <style scoped type="text/scss" lang="scss">
-    @import '../scss/variables-import';
+@import '../scss/variables-import';
 
-    .c-list {
-        @include stack(sm);
-    }
+.c-list {
+    @include stack(sm);
+}
 </style>

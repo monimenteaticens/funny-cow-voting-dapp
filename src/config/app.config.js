@@ -7,7 +7,7 @@ export default {
         authId: '0b29e994857f10e',
     },
     contract: {
-        address: '0x00710934c4Da3747b111084b492f55F7742aAD53',
+        address: '0xfe776575362A0EA34AadBb582A1310CA96F48466',
         abi: [
             {
                 "constant": true,

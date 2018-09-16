@@ -30,17 +30,17 @@ export default {
 </script>
 
 <style scoped type="text/scss" lang="scss">
-    @import '../scss/variables-import';
+@import '../scss/variables-import';
 
-    .c-text {
-        text-align: center;
-        a {
-            color: $color-theme2-1;
+.c-text {
+    text-align: center;
+    a {
+        color: $color-theme2-1;
 
-            &:focus,
-            &:hover {
-                color: darken($color-theme2-1, 10);
-            }
+        &:focus,
+        &:hover {
+            color: darken($color-theme2-1, 10);
         }
     }
+}
 </style>
