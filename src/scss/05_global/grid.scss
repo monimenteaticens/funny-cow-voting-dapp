@@ -1,0 +1,124 @@
+.l-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $half-gutter-width;
+    padding-left: $half-gutter-width;
+    width: 100%;
+    max-width: $container-width;
+
+    @include size(xl-only) {
+        padding: 0;
+    }
+
+    &--full-width {
+        padding: 0;
+    }
+}
+
+.l-row {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: $gutter-compensation;
+    margin-left: $gutter-compensation;
+    box-sizing: border-box;
+}
+
+.l-col {
+    flex: 0 0 auto;
+    padding-right: $half-gutter-width;
+    padding-left: $half-gutter-width;
+    box-sizing: border-box;
+
+    &.is-hidden {
+        display: none;
+    }
+}
+
+@mixin alignment($grid-size: null) {
+    $grid-size-modifier: '';
+    @if($grid-size) {
+        $grid-size-modifier: \@#{$grid-size};
+    }
+
+    // for row
+    .l-align-start#{$grid-size-modifier} {
+        justify-content: flex-start;
+    }
+
+    .l-align-center#{$grid-size-modifier} {
+        justify-content: center;
+    }
+
+    .l-align-end#{$grid-size-modifier} {
+        justify-content: flex-end;
+    }
+
+    .l-align-top#{$grid-size-modifier} {
+        align-items: flex-start;
+    }
+
+    .l-align-middle#{$grid-size-modifier} {
+        align-items: center;
+    }
+
+    .l-align-bottom#{$grid-size-modifier} {
+        align-items: flex-end;
+    }
+
+    .l-align-around#{$grid-size-modifier} {
+        justify-content: space-around;
+    }
+
+    .l-align-between#{$grid-size-modifier} {
+        justify-content: space-between;
+    }
+
+    // for col
+    .l-align-first#{$grid-size-modifier} {
+        order: -1;
+    }
+
+    .l-align-last#{$grid-size-modifier} {
+        order: 1;
+    }
+
+    .l-align-reverse#{$grid-size-modifier} {
+        flex-direction: row-reverse;
+    }
+}
+
+@for $i from 1 through length($viewport-layouts) {
+    $media-query: nth($viewport-layouts, $i);
+
+    $grid-size-modifier: '';
+    $media-query-modifier: null;
+
+    @if(nth($viewport-layouts, $i)) {
+        $grid-size-modifier: \@#{nth($viewport-layouts, $i)};
+        $media-query-modifier: #{nth($viewport-layouts, $i)}-up;
+    }
+
+    @include size($media-query-modifier) {
+        .l-col--auto#{$grid-size-modifier} {
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
+        }
+
+        .l-col--20#{$grid-size-modifier} {
+            flex-basis: (100% / 5);
+            max-width: (100% / 5);
+        }
+
+        @for $i from 1 through $columns {
+            .l-col--#{$i + $grid-size-modifier} {
+                flex-basis: (100% / $columns) * $i;
+                max-width: (100% / $columns) * $i;
+            }
+        }
+
+        @include alignment($media-query);
+    }
+}

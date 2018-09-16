@@ -1,0 +1,201 @@
+// =============================================
+// COLORS
+// =============================================
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$color-theme-dark: rgba(0, 5, 1, 1);
+$color-theme-blue: rgba(5, 142, 217, 1);
+$color-theme-white: rgba(255, 255, 255, 1);
+$color-theme-turquoise: rgba(77, 204, 189, 1);
+$color-theme-blue-dark: rgba(0, 52, 89, 1);
+//
+//$color-theme2-1: rgba(191, 67, 66, 1);
+//$color-theme2-2: rgb(240, 240, 240);
+//$color-theme2-3: rgba(167, 138, 127, 1);
+//$color-theme2-4: rgba(115, 87, 81, 1);
+//$color-theme2-5: rgba(89, 69, 57, 1);
+
+$color-theme2-1: rgb(0, 145, 255);
+$color-theme2-2: rgb(240, 240, 240);
+$color-theme2-3: rgb(255, 60, 61);
+$color-theme2-4: rgb(71, 71, 71);
+$color-theme2-5: rgb(63, 61, 97);
+
+// =============================================
+// MEDIA QUERIES
+// =============================================
+
+// Common Device sizes:
+// iPhone 5: 320px
+// iPhone 7: 375px
+// iPhone 7 Plus: 414px
+// iPad hoch: 768px
+// iPad quer: 1024px
+// HD: 1280px
+
+// Usage: @include size(xs-only) {}
+// Available paramters:
+// xs-only, sm-only, md-only, lg-only, xl-only
+// sm-up, md-up, lg-up
+// sm-down, md-down, lg-down
+
+$grid-xs: 100%;
+$grid-sm: 580px;
+$grid-md: 768px;
+$grid-lg: 1024px;
+$grid-xl: 1140px;
+
+
+// =============================================
+// FONT-FAMILIES
+// =============================================
+
+// Include @font-face here if necessary.
+// Use only one font-name and set appropriate font-weights!
+//
+// Set the different fonts below and use them as mixin.
+// Name, fallback and weights must be set.
+// @include font(primary, light);
+// @include font(secondary, bold);
+// Optional: Include the font style as the last parameter
+// @include font(primary, light, italic);
+
+$fonts: (
+    primary: (
+        name: 'Roboto',
+        fallback: (Helvetica, Arial, sans-serif),
+        weights: (
+            light: 300,
+            normal: 400,
+            medium: 500,
+            bold: 700
+        )
+    ),
+    secondary: (
+        name: 'Times',
+        fallback: serif,
+        weights: (
+            normal: 400,
+            bold: 700
+        )
+    )
+);
+
+
+// =============================================
+// FONT-SIZES
+// =============================================
+
+// Usage: @include font-size(fs-100);
+// The purpose of the key-numbers is to have them ordered relative to their font-size.
+// The key-numbers are not related in any other way to the font-size or line-height.
+// Use fs-100 as basic font-size.
+
+$font-sizes: (
+    fs-80: (
+        font-size: 14px,
+        font-size-lg: 16px,
+        line-height: 160%
+    ),
+    fs-100: (
+        font-size: 16px,
+        font-size-md: 18px,
+        font-size-xl: 20px,
+        line-height: 140%
+    ),
+    fs-140: (
+        font-size: 21px,
+        font-size-lg: 24px,
+        line-height: 120%
+    ),
+    fs-160: (
+        font-size: 26px,
+        font-size-lg: 29px,
+        line-height: 120%
+    ),
+    fs-200: (
+        font-size: 26px,
+        font-size-sm: 28px,
+        font-size-md: 30px,
+        font-size-lg: 38px,
+        font-size-xl: 48px,
+        line-height: 140%,
+        line-height-xl: 120%,
+    ),
+);
+
+
+// =========================================================
+// SPACING
+// =========================================================
+
+// tbd
+
+// =========================================================
+// Z-INDEXES
+// =========================================================
+
+// USE z-index mixins
+// @include z-index('header');
+
+$zindex-positions: (
+    foo: 2,
+    bar: 3
+);
+
+
+// =============================================
+// TRANSITIONS
+// =============================================
+
+$trans-time: 450ms cubic-bezier(.33, .7, .32, 1) 0ms;
+$trans-time-fast: 250ms cubic-bezier(.33, .7, .32, 1) 0ms;
+
+
+// =============================================
+// GRID
+// =============================================
+
+$columns: 12;
+$container-width: 1080px;
+$gutter-width: 24px;
+$gutter-compensation: calc((#{$gutter-width} * 0.5) * -1);
+$half-gutter-width: calc((#{$gutter-width} * 0.5));
+$viewport-layouts: null, 'sm', 'md', 'lg', 'xl';
+
+// =============================================
+// SPACING
+// =============================================
+
+$sp1: 1px;
+$sp2: 2px;
+$sp3: 4px;
+$sp4: 8px;
+$sp5: 16px;
+$sp6: 24px;
+$sp7: 32px;
+$sp8: 40px;
+$sp9: 48px;
+$sp10: 56px;
+$sp11: 64px;
+$sp12: 96px;
+$sp12: 124px;
+$sp13: 188px;
+
+// SPACING STACKING
+$space-stack-xxxs: 10px;
+$space-stack-xxs: 20px;
+$space-stack-xs: 30px;
+$space-stack-sm: 50px;
+$space-stack-md: 70px;
+$space-stack-lg: 100px;
+$space-stack-xl: 130px;
+
+
+// =============================================
+// OTHERS
+// =============================================
+
+$border-radius-default: 5px;
+$box-shadow-default: 2px 7px 20px 0px rgba(0,0,0,0.2);

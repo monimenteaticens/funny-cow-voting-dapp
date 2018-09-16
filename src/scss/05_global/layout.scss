@@ -1,0 +1,17 @@
+// =========================================================
+// LAYOUT CLASSES -> CAN BE USED GLOBALLY
+// =========================================================
+
+.l-app-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.l-app-content {
+    position: relative;
+    flex-grow: 1;
+}
+
+.l-page-wrapper {
+    @include stack(sm, top);
+}

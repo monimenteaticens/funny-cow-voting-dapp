@@ -1,0 +1,117 @@
+// =========================================================
+// Z-INDEXES
+// =========================================================
+
+/**
+ * All z-indexes at one position
+ * @param $z-index
+ * @example
+ *   @include z-index('nav');
+ */
+@mixin z-index($z-index) {
+    z-index: map-get($zindex-positions, $z-index);
+};
+
+
+// =========================================================
+// OTHER MIXINS
+// =========================================================
+
+/**
+ * CLEARFIX
+ * @example
+ *   @include clearfix;
+ */
+@mixin clearfix {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+/**
+ * VISUALL HIDDEN (FOR SCREENREADERS)
+ * @example
+ *   @include visually-hidden;
+ */
+@mixin visually-hidden {
+    position: absolute;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+/**
+ * Mixin to create aspect ratio with padding-bottom-hack
+ * @param $w width
+ * @param $h height
+ * @param $child child type
+ * @example
+ *   @include aspect-ratio(16,9){}
+ *   @include aspect-ratio(16,9, div){}
+ */
+
+@mixin aspect-ratio($w, $h, $child: div) {
+
+    position: relative;
+    padding-bottom: percentage($h / $w);
+    width: 100%;
+
+    & > #{$child} { // sass-lint:disable-line no-combinators
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+}
+
+// =============================================
+// STACK SPACES
+// =============================================
+
+@mixin stack($size, $direction: bottom) {
+    @if $size == 'xxxs' {
+        margin-#{$direction}: $space-stack-xxxs;
+    }
+    @if $size == 'xxs' {
+        margin-#{$direction}: $space-stack-xxs;
+    }
+    @if $size == 'xs' {
+        margin-#{$direction}: $space-stack-xxs;
+        @include size(sm-up) {
+            margin-#{$direction}: $space-stack-xs;
+        }
+    }
+    @if $size == 'sm' {
+        margin-#{$direction}: $space-stack-xs;
+        @include size(sm-up) {
+            margin-#{$direction}: $space-stack-sm;
+        }
+    }
+    @if $size == 'md' {
+        margin-#{$direction}: $space-stack-sm;
+        @include size(sm-up) {
+            margin-#{$direction}: $space-stack-md;
+        }
+    }
+    @if $size == 'lg' {
+        margin-#{$direction}: $space-stack-sm;
+        @include size(sm-up) {
+            margin-#{$direction}: $space-stack-md;
+        }
+        @include size(md-up) {
+            margin-#{$direction}: $space-stack-lg;
+        }
+    }
+    @if $size == 'xl' {
+        margin-#{$direction}: $space-stack-sm;
+        @include size(sm-up) {
+            margin-#{$direction}: $space-stack-xl;
+        }
+    }
+}
